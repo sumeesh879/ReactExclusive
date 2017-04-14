@@ -2,7 +2,8 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  NavLink
+  NavLink,
+  Switch
 } from 'react-router-dom';
 import Nav from './Nav';
 import Popular from './Popular';
@@ -13,13 +14,17 @@ class App extends React.Component {
     render() {
         return (
             <Router>
-                <div>
+                <div className="container">
                     <Nav />
-                    <div className="container">
+                    <Switch>
                         <Route exact path='/' component={Home} /> 
                         <Route path='/popular' component={Popular} />
                         <Route path='/battle' component={Battle} />
-                    </div>
+                        {/*For Invalid routes - render is given with a function which returns JSX*/}
+                        <Route render = { function() { 
+                            return <p>Not Found</p>
+                        }} />
+                    </Switch>
                 </div>
             </Router>
         )
