@@ -1,3 +1,3 @@
 # ReactExclusive
 
-Available @ [here](https://reactexclusice.firebaseapp.com)Hoste
+Hosted and Available @ [here](https://reactexclusice.firebaseapp.com)
