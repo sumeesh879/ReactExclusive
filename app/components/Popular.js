@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import api from '../utils/api'
+import api from '../utils/api';
+import Loading from './Loading';
 
 function SelectLanguage (props) {
     var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
@@ -20,7 +21,7 @@ function SelectLanguage (props) {
     )
 }
 
-SelectLanguage.PropTypes = {
+SelectLanguage.propTypes = {
     selectedLanguage: PropTypes.string.isRequired,
     onSelect: PropTypes.func.isRequired
 };
@@ -51,7 +52,7 @@ function RepoGrid (props) {
     )
 }
 
-RepoGrid.PropTypes = {
+RepoGrid.propTypes = {
     repos: PropTypes.array.isRequired
 };
 
@@ -93,7 +94,7 @@ class Popular extends React.Component {
                 />
                 {
                     !this.state.repos ? 
-                        <p className='loading'>Loading...</p> : <RepoGrid repos = {this.state.repos} />
+                        <Loading text='Waiting' /> : <RepoGrid repos = {this.state.repos} />
                 }
             </div>
         )

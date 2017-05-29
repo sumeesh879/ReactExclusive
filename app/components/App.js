@@ -9,6 +9,7 @@ import Nav from './Nav';
 import Popular from './Popular';
 import Home from './Home';
 import Battle from './Battle';
+import Results from './Results';
 
 class App extends React.Component {
     render() {
@@ -19,7 +20,8 @@ class App extends React.Component {
                     <Switch>
                         <Route exact path='/' component={Home} /> 
                         <Route path='/popular' component={Popular} />
-                        <Route path='/battle' component={Battle} />
+                        <Route exact path='/battle' component={Battle} />
+                        <Route path='/battle/results' component={Results} />
                         {/*For Invalid routes - render is given with a function which returns JSX*/}
                         <Route render = { function() { 
                             return <p>Not Found</p>
